@@ -51,9 +51,9 @@
 #         use_auth_token=True
 #     )
 #     model.eval()
-#     logging.info("✅ Model and tokenizer loaded successfully")
+#     logging.info("Model and tokenizer loaded successfully")
 # except Exception as e:
-#     logging.error(f"❌ Failed to load model: {e}")
+#     logging.error(f" Failed to load model: {e}")
 #     tokenizer = None
 #     model = None
 
@@ -137,10 +137,10 @@
 #             db.session.add(record)
 #             db.session.commit()
 
-#             logging.info(f"✅ Note classified: {label}")
+#             logging.info(f" Note classified: {label}")
 #             return record
 #         except Exception as e:
-#             logging.error(f"❌ Classification error: {e}")
+#             logging.error(f"Classification error: {e}")
 #             ns.abort(500, f"Classification error: {str(e)}")
 
 # @app.route("/")
@@ -212,9 +212,9 @@ try:
         use_auth_token=True
     )
     model.eval()
-    logging.info("✅ Model and tokenizer loaded successfully")
+    logging.info("Model and tokenizer loaded successfully")
 except Exception as e:
-    logging.error(f"❌ Failed to load model: {e}")
+    logging.error(f"Failed to load model: {e}")
     tokenizer = None
     model = None
 
@@ -299,10 +299,10 @@ class Classify(Resource):
             record = ClinicalNote(note=note, label=label, raw_output=raw_output)
             db.session.add(record)
             db.session.commit()
-            logging.info(f"✅ Note classified: {label}")
+            logging.info(f"Note classified: {label}")
             return record
         except Exception as e:
-            logging.error(f"❌ Classification error: {e}")
+            logging.error(f"Classification error: {e}")
             ns.abort(500, f"Classification error: {str(e)}")
 
 @ns.route('/records')
@@ -353,7 +353,7 @@ class UploadCSV(Resource):
                 db.session.add(record)
                 success += 1
             except Exception as e:
-                logging.error(f"❌ Failed on row: {e}")
+                logging.error(f"Failed on row: {e}")
                 failed += 1
 
         db.session.commit()
