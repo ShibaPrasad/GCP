@@ -39,7 +39,7 @@ try:
     )
     model.eval()
 except Exception as e:
-    print(f"❌ Failed to load model: {e}")
+    print(f"Failed to load model: {e}")
     tokenizer = None
     model = None
 
@@ -112,7 +112,7 @@ class Classify(Resource):
 
             return record
         except Exception as e:
-            print("❌ Classification error:", str(e))
+            print("Classification error:", str(e))
             ns.abort(500, f"Classification error: {str(e)}")
 
 @ns.route('/records')
@@ -191,7 +191,7 @@ class UploadCSV(Resource):
                 db.session.add(record)
                 success += 1
             except Exception as e:
-                print(f"❌ Failed on row: {e}")
+                print(f"Failed on row: {e}")
                 failed += 1
 
         db.session.commit()
