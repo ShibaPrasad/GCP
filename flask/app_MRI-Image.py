@@ -23,32 +23,6 @@ def dummy_segmentation(image_data):
 def index():
     return "MRI API is running. Use endpoints /upload (POST), /segment (POST), /calculate-volume (GET), /status (GET)."
 
-# @app.route('/upload', methods=['POST'])
-# def upload_image():
-#     global uploaded_image, voxel_volume_mm3
-#     if 'file' not in request.files:
-#         return jsonify({"error": "No file part"}), 400
-    
-#     file = request.files['file']
-#     if file.filename == '':
-#         return jsonify({"error": "No selected file"}), 400
-
-#     # Read NIfTI file from bytes
-#     file_bytes = file.read()
-#     file_obj = io.BytesIO(file_bytes)
-#     try:
-#         nii = nib.load(file_obj)
-#         uploaded_image = nii.get_fdata()
-#         header = nii.header
-#         # Calculate voxel volume in mm^3 from header pixdim
-#         pixdim = header.get_zooms()[:3]  # voxel spacing along x,y,z
-#         voxel_volume_mm3 = np.prod(pixdim)
-#     except Exception as e:
-#         return jsonify({"error": f"Failed to load NIfTI file: {str(e)}"}), 400
-
-#     return jsonify({"message": f"Image uploaded successfully. Shape: {uploaded_image.shape}"}), 200
-
-import tempfile
 import os
 
 @app.route('/upload', methods=['POST'])
