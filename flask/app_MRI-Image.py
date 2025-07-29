@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
 
 # ---------------------------------------------
-# (jupyter-env) [m254629@rohpc10 flask]$ python app.py
+# (jupyter-env) $ python app.py
 #  * Serving Flask app 'app'
 #  * Debug mode: on
 # WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
