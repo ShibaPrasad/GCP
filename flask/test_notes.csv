@@ -1,0 +1,3 @@
+MRN,Note,Department,EventDate,GroundTruth
+12345,Patient developed infection after surgery,Surgery,2025-06-01,Infection
+67890,Equipment failed during the procedure,ICU,2025-06-03,Equipment issue

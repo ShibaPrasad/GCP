@@ -1,0 +1,101 @@
+MRN,Note,Department,EventDate,GroundTruth
+1001,Equipment error led to delayed medication delivery.,InfectiousDiseases,2023-03-17,Equipment issue
+1002,Patient stable with no adverse symptoms reported.,InfectiousDiseases,2023-03-02,Other
+1003,No safety events noted during current evaluation.,ICU,2022-05-24,Other
+1004,Regular check-up showed no complications.,InfectiousDiseases,2022-09-21,Other
+1005,Catheter leakage detected causing minor bleeding.,Oncology,2023-10-04,Equipment issue
+1006,Patient recovering from surgery with no complications observed.,Radiology,2022-04-05,Surgery
+1007,Signs of infection including elevated WBC and body aches.,Radiology,2023-01-16,Infection
+1008,Malfunctioning IV pump caused interruption in treatment.,ICU,2023-12-19,Equipment issue
+1009,Catheter leakage detected causing minor bleeding.,InfectiousDiseases,2022-05-25,Equipment issue
+1010,Redness and inflammation noted around respiratory tract.,Cardiology,2023-07-16,Infection
+1011,"Patient reports productive cough and chills, suspect respiratory infection.",ER,2022-07-18,Infection
+1012,Patient stable with no adverse symptoms reported.,Cardiology,2023-02-28,Other
+1013,IV pump malfunction resulted in interrupted infusion.,Radiology,2022-04-04,Equipment issue
+1014,Delayed wound healing observed after surgical procedure.,Radiology,2024-04-07,Surgery
+1015,Routine follow-up visit without complaints.,Radiology,2022-10-12,Other
+1016,Equipment error led to delayed medication delivery.,ER,2022-06-28,Equipment issue
+1017,Localized swelling and pain indicating possible infection at incision site.,ER,2024-05-10,Infection
+1018,Localized swelling and pain indicating possible infection at wound area.,Surgery,2022-06-03,Infection
+1019,Patient reports mild fatigue but no other issues.,PrimaryCare,2023-07-08,Other
+1020,Localized swelling and pain indicating possible infection at catheter insertion site.,ER,2023-09-27,Infection
+1021,Patient reports mild fatigue but no other issues.,Surgery,2023-06-04,Other
+1022,Delayed wound healing observed after surgical procedure.,ER,2023-11-22,Surgery
+1023,Localized swelling and pain indicating possible infection at respiratory tract.,Oncology,2024-03-23,Infection
+1024,Patient stable with no adverse symptoms reported.,PrimaryCare,2024-04-28,Other
+1025,Localized swelling and pain indicating possible infection at respiratory tract.,ICU,2024-04-04,Infection
+1026,Routine follow-up visit without complaints.,ICU,2022-03-24,Other
+1027,IV pump malfunction resulted in interrupted infusion.,InfectiousDiseases,2024-06-04,Equipment issue
+1028,Malfunctioning ventilator caused interruption in treatment.,InfectiousDiseases,2022-08-08,Equipment issue
+1029,Patient recovering from surgery with no complications observed.,InfectiousDiseases,2022-12-16,Surgery
+1030,Catheter leakage detected causing minor bleeding.,Cardiology,2023-07-21,Equipment issue
+1031,Patient reports mild fatigue but no other issues.,ER,2023-10-05,Other
+1032,Patient reports mild fatigue but no other issues.,Oncology,2023-12-22,Other
+1033,IV pump malfunction resulted in interrupted infusion.,ICU,2022-05-12,Equipment issue
+1034,IV pump malfunction resulted in interrupted infusion.,Surgery,2023-03-11,Equipment issue
+1035,Post-op day 9: patient shows swelling and bruising near incision site.,InfectiousDiseases,2024-05-18,Surgery
+1036,Localized swelling and pain indicating possible infection at incision site.,Surgery,2023-01-14,Infection
+1037,Patient complains of discomfort due to catheter failure.,Radiology,2022-06-07,Equipment issue
+1038,Patient developed fever and redness at the catheter insertion site.,Cardiology,2024-03-26,Infection
+1039,"Patient reports productive cough and chills, suspect respiratory infection.",ER,2022-09-12,Infection
+1040,Routine follow-up visit without complaints.,InfectiousDiseases,2022-06-11,Other
+1041,Delayed wound healing observed after surgical procedure.,Radiology,2022-06-16,Surgery
+1042,Patient recovering from surgery with no complications observed.,InfectiousDiseases,2022-04-29,Surgery
+1043,Redness and inflammation noted around respiratory tract.,Radiology,2024-03-21,Infection
+1044,Post-op day 11: patient shows swelling and bruising near incision site.,ICU,2023-03-13,Surgery
+1045,Malfunctioning catheter caused interruption in treatment.,Cardiology,2022-03-06,Equipment issue
+1046,Patient reports mild fatigue but no other issues.,Oncology,2024-04-28,Other
+1047,"Patient reports productive cough and chills, suspect respiratory infection.",Oncology,2024-04-27,Infection
+1048,Equipment error led to delayed medication delivery.,InfectiousDiseases,2023-08-25,Equipment issue
+1049,Signs of infection including elevated WBC and body aches.,ICU,2022-12-21,Infection
+1050,Patient recovering from surgery with no complications observed.,ICU,2022-02-19,Surgery
+1051,Redness and inflammation noted around catheter insertion site.,ER,2022-01-31,Infection
+1052,Routine follow-up visit without complaints.,ICU,2023-03-07,Other
+1053,Redness and inflammation noted around catheter insertion site.,Cardiology,2023-04-06,Infection
+1054,Redness and inflammation noted around respiratory tract.,Surgery,2022-07-14,Infection
+1055,Post-op day 4: patient shows swelling and bruising near incision site.,PrimaryCare,2023-05-22,Surgery
+1056,Redness and inflammation noted around catheter insertion site.,ICU,2022-07-29,Infection
+1057,Patient reports mild fatigue but no other issues.,Surgery,2022-05-23,Other
+1058,Catheter leakage detected causing minor bleeding.,InfectiousDiseases,2022-11-17,Equipment issue
+1059,Surgical site redness and drainage on post-op day 14.,PrimaryCare,2022-07-18,Surgery
+1060,Patient recovering from surgery with no complications observed.,Radiology,2023-02-28,Surgery
+1061,Redness and inflammation noted around catheter insertion site.,Surgery,2022-12-31,Infection
+1062,IV pump malfunction resulted in interrupted infusion.,ER,2022-10-28,Equipment issue
+1063,Catheter leakage detected causing minor bleeding.,ICU,2022-12-18,Equipment issue
+1064,No safety events noted during current evaluation.,Radiology,2024-04-07,Other
+1065,Patient reports mild fatigue but no other issues.,Cardiology,2023-11-22,Other
+1066,Surgical site redness and drainage on post-op day 10.,Cardiology,2024-01-21,Surgery
+1067,Equipment error led to delayed medication delivery.,ER,2022-01-10,Equipment issue
+1068,Patient reports discomfort and minor bleeding at surgical site.,InfectiousDiseases,2023-09-26,Surgery
+1069,Redness and inflammation noted around catheter insertion site.,ER,2022-03-16,Infection
+1070,Regular check-up showed no complications.,InfectiousDiseases,2023-10-27,Other
+1071,Malfunctioning IV pump caused interruption in treatment.,PrimaryCare,2023-10-31,Equipment issue
+1072,Routine follow-up visit without complaints.,Cardiology,2024-03-16,Other
+1073,Regular check-up showed no complications.,Radiology,2024-04-13,Other
+1074,Routine follow-up visit without complaints.,Radiology,2023-01-25,Other
+1075,No safety events noted during current evaluation.,ER,2023-10-27,Other
+1076,Malfunctioning monitoring device caused interruption in treatment.,Oncology,2023-04-12,Equipment issue
+1077,IV pump malfunction resulted in interrupted infusion.,Radiology,2024-06-15,Equipment issue
+1078,No safety events noted during current evaluation.,Radiology,2022-07-15,Other
+1079,Patient reports discomfort and minor bleeding at surgical site.,Radiology,2023-08-18,Surgery
+1080,Regular check-up showed no complications.,PrimaryCare,2022-02-21,Other
+1081,Malfunctioning ventilator caused interruption in treatment.,Oncology,2024-04-17,Equipment issue
+1082,"Patient reports productive cough and chills, suspect respiratory infection.",Cardiology,2023-05-31,Infection
+1083,Patient complains of discomfort due to ventilator failure.,ER,2023-07-20,Equipment issue
+1084,IV pump malfunction resulted in interrupted infusion.,Radiology,2022-04-16,Equipment issue
+1085,Redness and inflammation noted around respiratory tract.,Cardiology,2022-07-25,Infection
+1086,Routine follow-up visit without complaints.,PrimaryCare,2022-06-06,Other
+1087,Catheter leakage detected causing minor bleeding.,Cardiology,2022-05-10,Equipment issue
+1088,No safety events noted during current evaluation.,Radiology,2023-08-21,Other
+1089,Redness and inflammation noted around catheter insertion site.,Cardiology,2023-12-30,Infection
+1090,Redness and inflammation noted around wound area.,Oncology,2023-11-25,Infection
+1091,No safety events noted during current evaluation.,Cardiology,2022-11-20,Other
+1092,No safety events noted during current evaluation.,Oncology,2023-01-12,Other
+1093,Redness and inflammation noted around respiratory tract.,Cardiology,2024-06-18,Infection
+1094,Patient stable with no adverse symptoms reported.,PrimaryCare,2023-01-07,Other
+1095,IV pump malfunction resulted in interrupted infusion.,PrimaryCare,2022-11-16,Equipment issue
+1096,Patient developed fever and redness at the wound area.,Radiology,2023-09-08,Infection
+1097,Redness and inflammation noted around incision site.,Oncology,2022-02-14,Infection
+1098,Surgical site redness and drainage on post-op day 4.,Surgery,2023-06-11,Surgery
+1099,"Patient reports productive cough and chills, suspect respiratory infection.",InfectiousDiseases,2022-04-01,Infection
+1100,Equipment error led to delayed medication delivery.,Oncology,2022-12-15,Equipment issue

@@ -1,0 +1,195 @@
+GCP/
+├── backend (flask)/                   # Flask + LLaMA2 app
+│   ├── app.py
+│   ├── Dockerfile
+│   ├── cloudbuild.yaml
+│   ├── requirements.txt               # Optional if not using Docker installs
+│   ├── .gcloudignore
+│   ├── db/
+│   │   └── clinical_notes.db          # Local SQLite (optional)
+│   ├── models/                        # Optional: local tokenizer/models
+│   ├── scheduler/
+│   │   └── llama_metrics_job.sh       # Script to create Cloud Scheduler job
+│   ├── scripts/
+│   │   └── test_local.sh              # Local curl/test helpers
+│   ├── firestore_setup/
+│   │   └── write_to_firestore.py      # Optional: store outputs in Firestore
+│   └── README.md                      # Backend setup and deploy docs
+│
+├── frontend (react-frontend-llama)/   # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── NoteClassifier.js
+│   │   └── ...
+│   ├── .env                           # REACT_APP_API_URL=https://...
+│   ├── package.json
+│   ├── Dockerfile                     # (Optional) for deploying React via Cloud Run or GCR
+│   └── README.md                      # Frontend setup and deployment
+│
+├── deploy/
+│   ├── service-account.json           # (Optional) for local auth or deployment scripts
+│   └── terraform/                     # (Optional) Infra-as-code (TF/GCP infra setup)
+│
+└── README.md                          # Top-level project overview
+
+
+# -------------------------------------------------------------------------------------------------------
+*************************
+* Deployment Workflow ***
+*************************
+Task	                               How to Perform
+
+Build + deploy Flask API	           gcloud builds submit --config cloudbuild.yaml
+Run Flask locally	                   python app.py (after model download)
+Schedule /metrics job	               scheduler/llama_metrics_job.sh
+Run React locally	                   npm start in /frontend
+Deploy React	                       Firebase, Vercel, or Dockerfile + Cloud Run
+
+# --------------------------------------------------------------------------------------------------
+Project Summary
+This project is a complete LLM-based clinical note classification system powered by LLaMA-2. It includes:
+
+LLM Flask API
+The backend is built with Flask and PyTorch, leveraging the HuggingFace Transformers library for clinical note classification using LLaMA-2. It is fully containerized and ready for deployment.
+
+Cloud Run Deployment with Cloud Build
+The API is containerized using a custom Dockerfile and deployed using Cloud Build and Cloud Run for scalable, serverless hosting. A cloudbuild.yaml file automates the CI/CD pipeline.
+
+React Frontend with Firebase Hosting
+A React-based user interface is provided to interact with the classification API. The frontend is configured to consume the API and can be deployed using Firebase Hosting.
+
+Cloud Scheduler Job
+A Cloud Scheduler job is configured (via shell script) to trigger automated tasks, such as exporting classification metrics daily via HTTP requests to the Cloud Run service.
+
+Firestore Logging (Optional)
+A Firestore-based logging system is included as an alternative to SQLite, allowing classification records to be stored in Google Cloud Firestore for scalability and integration with other GCP services.
+
+Terraform Infrastructure Setup
+Terraform templates are included to provision Cloud Run, Cloud Scheduler, and related resources automatically, making the deployment process repeatable and version-controlled.
+
+# ---------------------------Over view (below )----------------------------------------------------------------------------
+Project description
+Architecture diagram
+Setup instructions (local + GCP)
+Cloud Run deployment
+Firebase frontend hosting
+Cloud Scheduler
+Firestore option
+Terraform setup
+
+# Clinical Note Classifier using LLaMA-2
+
+This project is a full-stack clinical note classification system powered by **LLaMA-2**. 
+It uses a **Flask API** with PyTorch and HuggingFace Transformers, 
+a **React frontend**, and is deployed using **Google Cloud Platform (GCP)** with optional **Firestore logging**, **Cloud Scheduler**, and **Terraform infrastructure automation**.
+
+---
+
+## Architecture
+
+```text
+                 ┌─────────────────────┐
+                 │  React Frontend UI  │
+                 └─────────▲───────────┘
+                           │
+                           ▼
+                  ┌────────────────┐
+                  │  Cloud Run     │  ← Flask + LLaMA2
+                  │  LLM API       │
+                  └──────┬─────────┘
+                         │
+         ┌───────────────┼────────────────┐
+         ▼               ▼                ▼
+  Firestore DB   Cloud Scheduler    Export (CSV, PNG)
+ (optional log)   (e.g. /metrics)   via endpoints
+
+# -------------------------------------------------------------------------------------------------------
+Steps to Follow:
+1. Clone and install
+    cd backend
+    pip install -r requirements.txt
+
+2. Run Flask API locally: python app.py
+
+3. Run React frontend: 
+    cd ../frontend
+    npm install
+    npm start
+Make sure .env in frontend contains the backend URL: REACT_APP_API_URL=http://localhost:5089
+
+GCP Deployment:
+1. Enable Required APIs
+gcloud services enable run.googleapis.com \
+    cloudbuild.googleapis.com \
+    artifactregistry.googleapis.com \
+    firestore.googleapis.com \
+    cloudscheduler.googleapis.com
+
+2. Build & Deploy Backend
+cd backend
+gcloud builds submit --config cloudbuild.yaml
+
+3. Set Environment in Frontend
+Update frontend/.env:
+REACT_APP_API_URL=https://llama-cls-api-abc123-uc.a.run.app
+
+Frontend Deployment (Firebase Hosting)
+cd frontend
+npm run build
+firebase login
+firebase init hosting
+firebase deploy
+
+Scheduler Setup (Cloud Scheduler)
+Run the shell script (update project and region inside it):
+cd backend/scheduler
+chmod +x llama_metrics_job.sh
+./llama_metrics_job.sh
+
+Use Firestore for Logging (Optional)
+Update app.py to use:
+from firestore_setup.firestore_helper import add_note_record
+
+Terraform Deployment (Optional)
+cd deploy/terraform
+terraform init
+terraform apply
+
+Configure terraform.tfvars:
+
+project_id = "your-gcp-project-id"
+region     = "us-central1"
+image_url  = "gcr.io/your-project-id/llama-cls-api"
+
+Endpoints Summary
+
+| Endpoint           | Method | Description                            |
+| ------------------ | ------ | -------------------------------------- |
+| `/llama/classify`  | POST   | Classify a single clinical note        |
+| `/llama/records`   | GET    | Retrieve recent classification records |
+| `/llama/export`    | GET    | Export results as CSV                  |
+| `/llama/analytics` | GET    | Generate plots for label trends        |
+| `/llama/metrics`   | GET    | Return classification metrics as CSV   |
+| `/ping`            | GET    | Health check                           |
+
+
+llama-classifier-app/
+├── backend/
+│   ├── app.py
+│   ├── Dockerfile
+│   ├── cloudbuild.yaml
+│   ├── scheduler/              # Cloud Scheduler script
+│   ├── firestore_setup/        # Firestore DB helper
+│   ├── db/                     # SQLite (optional)
+├── frontend/
+│   ├── src/NoteClassifier.js
+│   ├── .env                    # REACT_APP_API_URL
+├── deploy/terraform/          # Terraform IaC
+
+
+# -------------------------------------------------------------------------------------------------------
+
+
+
+
